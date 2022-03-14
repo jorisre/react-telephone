@@ -1,7 +1,6 @@
 {
   "name": "react-telephone",
   "description": "☎️ Tiniest react input phone component (auto formating included)",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "source": "./src/index.tsx",
