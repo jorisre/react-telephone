@@ -4,8 +4,8 @@
   <a href="https://bundlephobia.com/result?p=react-telephone">
     <img src="https://img.shields.io/bundlephobia/minzip/react-telephone?style=for-the-badge" />
   </a>
-  <a href="https://twitter.com/\_jorisre" target="_blank">
-    <img alt="Twitter: \_jorisre" src="https://img.shields.io/twitter/follow/\_jorisre.svg?style=for-the-badge"" />
+  <a href="https://twitter.com/_jorisre" target="_blank">
+    <img alt="Twitter: \_jorisre" src="https://img.shields.io/twitter/follow/_jorisre.svg?style=for-the-badge"" />
   </a>
 </p>
 
@@ -17,8 +17,8 @@
 
 ## Coming soon 🧑🏻‍💻
 
-- [] Controlled mode
-- [] Custom render for `select` and `input`
+- [ ] Controlled mode
+- [ ] Custom render for `select` and `input`
 
 ## Installation
 
@@ -41,6 +41,10 @@ export default function Component() {
   return <PhoneInput />;
 }
 ```
+
+## Props
+
+_Coming soon..._
 
 ## Author
 
