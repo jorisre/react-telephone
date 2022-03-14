@@ -29,12 +29,12 @@ export const PhoneInput = forwardRef<HTMLInputElement, Props>(
     const defaultPhoneNumber = _defaultValue
       ? splitPhoneNumber(_defaultValue)
       : {
-          raw: '',
-          formatted: '',
-          country: defaultCountry
-            ? getCountryByIso(defaultCountry)
-            : countries[0],
-        };
+        raw: '',
+        formatted: '',
+        country: defaultCountry
+          ? getCountryByIso(defaultCountry)
+          : countries[0],
+      };
 
     const [_value, setValue] = useState<PhoneNumber>(defaultPhoneNumber);
 
