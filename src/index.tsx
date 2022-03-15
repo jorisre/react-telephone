@@ -10,7 +10,7 @@ import {
   splitPhoneNumber,
 } from './utils';
 
-interface Props
+export interface PhoneInputProps
   extends Omit<React.ComponentPropsWithRef<'input'>, 'value' | 'defaultValue'> {
   value?: string;
   defaultValue?: string;
@@ -22,19 +22,19 @@ interface Props
   };
 }
 
-export const PhoneInput = forwardRef<HTMLInputElement, Props>(
+export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
   ({ value, defaultCountry, classNames, ...props }, ref) => {
     const _ref = useRef<HTMLInputElement | null>(null);
     const _defaultValue = props.defaultValue || value;
     const defaultPhoneNumber = _defaultValue
       ? splitPhoneNumber(_defaultValue)
       : {
-        raw: '',
-        formatted: '',
-        country: defaultCountry
-          ? getCountryByIso(defaultCountry)
-          : countries[0],
-      };
+          raw: '',
+          formatted: '',
+          country: defaultCountry
+            ? getCountryByIso(defaultCountry)
+            : countries[0],
+        };
 
     const [_value, setValue] = useState<PhoneNumber>(defaultPhoneNumber);
 
