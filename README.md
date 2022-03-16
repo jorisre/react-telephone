@@ -52,8 +52,8 @@ export default function MyComponent() {
 
 ## Props
 
-| Prop             | Description                                        |                       Default | Value                                                                    |
-| :--------------- | :------------------------------------------------- | ----------------------------: | ------------------------------------------------------------------------ |
+| Prop             | Description                                        | Default                       |                                                                    Value |
+| :--------------- | -------------------------------------------------- | ----------------------------- | -----------------------------------------------------------------------: |
 | `defaultCountry` | Default country displayed for the country selector | First country _(Afghanistan)_ | Country [ISO2 code](https://en.wikipedia.org/wiki/ISO_3166-2) _(fr, us)_ |
 
 ## ✨ Contributors
