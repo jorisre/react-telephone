@@ -6,6 +6,17 @@
   "commit": false,
   "contributors": [
     {
+      "login": "jorisre",
+      "name": "Joris",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7545547?v=4",
+      "profile": "http://joris.re",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas"
+      ]
+    },
+    {
       "login": "Kcazer",
       "name": "Michaël Rézac",
       "avatar_url": "https://avatars.githubusercontent.com/u/609420?v=4",
