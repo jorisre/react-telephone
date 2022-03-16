@@ -123,6 +123,8 @@ test.each([
   ['12 34', '.. ..', '12 34'],
   ['123456', '.. ...', '12 345'], // Ignore excess digits
   ['123456', '.... ....', '1234 56'], // Fill as much as possible
+  ['123456', '.... ..-..', '1234 56-'], // Stop at first missing digit
+  ['123456', '.... ....-..', '1234 56'], // Stop at first missing digit
   ['6 24 15 78 63', '. .. .. .. ..', '6 24 15 78 63'],
   ['+33624157863', undefined, '+33624157863'],
 ])('applyMask(%s, %s) -> %s', (p, m, e) => {
