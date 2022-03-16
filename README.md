@@ -94,7 +94,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## 📝 License
 
-Copyright © 2020 [Joris](https://github.com/jorisre).<br />
+Copyright © 2022 [Joris](https://github.com/jorisre).<br />
 This project is [MIT](https://github.com/jorisre/react-telephone/blob/master/LICENSE) licensed.
 
 ---
