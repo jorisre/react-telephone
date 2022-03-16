@@ -8,7 +8,7 @@
     <img alt="Twitter: \_jorisre" src="https://img.shields.io/twitter/follow/_jorisre.svg?style=for-the-badge"" />
   </a>
   <a href="#contributors-">
-    <img alt="All Contributors"  src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=for-the-badge" />
+    <img alt="All Contributors"  src="https://img.shields.io/badge/all_contributors-2-black.svg?style=for-the-badge" />
   </a>
 </p>
 
