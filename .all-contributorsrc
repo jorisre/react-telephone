@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "jorisre",
+      "name": "Joris",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7545547?v=4",
+      "profile": "http://joris.re",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "react-telephone",
+  "projectOwner": "jorisre",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
