@@ -1,4 +1,7 @@
 <h1 align="center">Welcome to react-telephone ☎️</h1>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p align="center">
   <a href="https://bundlephobia.com/result?p=react-telephone">
     <img src="https://img.shields.io/bundlephobia/minzip/react-telephone?style=for-the-badge" />
@@ -75,3 +78,23 @@ This project is [MIT](https://github.com/jorisre/react-telephone/blob/master/LIC
 ---
 
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://joris.re"><img src="https://avatars.githubusercontent.com/u/7545547?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joris</b></sub></a><br /><a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Code">💻</a> <a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Documentation">📖</a> <a href="#ideas-jorisre" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
