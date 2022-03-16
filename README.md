@@ -56,22 +56,7 @@ export default function MyComponent() {
 | :--------------- | :------------------------------------------------- | ----------------------------: | ------------------------------------------------------------------------ |
 | `defaultCountry` | Default country displayed for the country selector | First country _(Afghanistan)_ | Country [ISO2 code](https://en.wikipedia.org/wiki/ISO_3166-2) _(fr, us)_ |
 
-## Author
-
-👤 **Joris**
-
-- Twitter: [@\_jorisre](https://twitter.com/_jorisre)
-- Github: [@jorisre](https://github.com/jorisre)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jorisre/react-telephone/issues). You can also take a look at the [contributing guide](https://github.com/jorisre/react-telephone/blob/master/CONTRIBUTING.md) and [code of conduct](https://github.com/jorisre/react-telephone/blob/master/CODE_OF_CONDUCT.md).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-## Contributors ✨
+## ✨ Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -89,6 +74,21 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Author
+
+👤 **Joris**
+
+- Twitter: [@\_jorisre](https://twitter.com/_jorisre)
+- Github: [@jorisre](https://github.com/jorisre)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jorisre/react-telephone/issues). You can also take a look at the [contributing guide](https://github.com/jorisre/react-telephone/blob/master/CONTRIBUTING.md) and [code of conduct](https://github.com/jorisre/react-telephone/blob/master/CODE_OF_CONDUCT.md).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
