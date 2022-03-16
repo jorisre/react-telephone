@@ -18,6 +18,7 @@ const DEFAULT_PHONE_NUMBER = {
 
 const PhoneContext = createContext<[PhoneNumber, (pN: PhoneNumber) => void]>([
   DEFAULT_PHONE_NUMBER,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   () => {},
 ]);
 
