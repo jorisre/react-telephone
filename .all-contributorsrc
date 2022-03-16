@@ -15,6 +15,15 @@
         "doc",
         "ideas"
       ]
+    },
+    {
+      "login": "Kcazer",
+      "name": "Michaël Rézac",
+      "avatar_url": "https://avatars.githubusercontent.com/u/609420?v=4",
+      "profile": "https://github.com/Kcazer",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
