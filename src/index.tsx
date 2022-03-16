@@ -1,8 +1,8 @@
-import { forwardRef, useRef, useState } from 'react';
+import { createContext, forwardRef, useContext, useRef, useState } from 'react';
 import countries from './countries';
+import type { Country as CountryType } from './utils';
 import {
   applyMask,
-  Country,
   getCountryByIso,
   PhoneNumber,
   removeMask,
@@ -10,31 +10,39 @@ import {
   splitPhoneNumber,
 } from './utils';
 
-export interface PhoneInputProps
+const DEFAULT_PHONE_NUMBER = {
+  raw: '',
+  formatted: '',
+  country: countries[0],
+};
+
+const PhoneContext = createContext<[PhoneNumber, (pN: PhoneNumber) => void]>([
+  DEFAULT_PHONE_NUMBER,
+  () => {},
+]);
+
+const usePhoneContext = () => useContext(PhoneContext);
+
+export interface PhoneProps
   extends Omit<React.ComponentPropsWithRef<'input'>, 'value' | 'defaultValue'> {
   value?: string;
   defaultValue?: string;
-  defaultCountry?: Country[2];
-  classNames?: {
-    container?: string;
-    select?: string;
-    input?: string;
-  };
+  defaultCountry?: CountryType[2];
 }
 
-export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
-  ({ value, defaultCountry, classNames, ...props }, ref) => {
+export const _Phone = forwardRef<HTMLInputElement, PhoneProps>(
+  ({ className, style, children, defaultCountry, value, ...props }, ref) => {
     const _ref = useRef<HTMLInputElement | null>(null);
     const _defaultValue = props.defaultValue || value;
     const defaultPhoneNumber = _defaultValue
       ? splitPhoneNumber(_defaultValue)
-      : {
+      : defaultCountry
+      ? {
           raw: '',
           formatted: '',
-          country: defaultCountry
-            ? getCountryByIso(defaultCountry)
-            : countries[0],
-        };
+          country: getCountryByIso(defaultCountry),
+        }
+      : DEFAULT_PHONE_NUMBER;
 
     const [_value, setValue] = useState<PhoneNumber>(defaultPhoneNumber);
 
@@ -53,64 +61,92 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
     };
 
     return (
-      <span className={classNames && classNames.container} role="group">
-        <select
-          className={classNames && classNames.select}
-          value={_value.country[2]}
-          onChange={(e) => {
-            const country = getCountryByIso(e.target.value as Country[2]);
-
-            const raw = _value.raw
-              ? replaceDialCode(_value.raw, _value.country[3], '+' + country[3])
-              : '+' + country[3];
-
-            handleChange({
-              formatted: applyMask(_value.formatted, country[4]),
-              raw,
-              country,
-            });
-          }}
-        >
-          {countries.map((country) => (
-            <option value={country[2]} key={country[2]}>
-              {country[0]}&nbsp;(+{country[3]})
-            </option>
-          ))}
-        </select>
-
-        <input
-          onChange={props.onChange}
-          aria-hidden="true"
-          type="tel"
-          style={{ display: 'none' }}
-          ref={(r) => {
-            if (typeof ref === 'function') ref(r);
-            _ref.current = r;
-          }}
-          defaultValue={defaultPhoneNumber.raw}
-        />
-
-        <input
-          {...props}
-          className={[props.className, classNames && classNames.input]
-            .filter(Boolean)
-            .join(' ')}
-          type="tel"
-          value={_value.formatted}
-          onChange={(e) => {
-            if (/\d+/.test(e.target.value)) {
-              handleChange(
-                Object.assign({}, _value, {
-                  raw: '+' + _value.country[3] + removeMask(e.target.value),
-                  formatted: applyMask(e.target.value, _value.country[4]),
-                })
-              );
-            }
-          }}
-        />
-      </span>
+      <PhoneContext.Provider value={[_value, handleChange]}>
+        <span className={className} style={style}>
+          <input
+            aria-hidden="true"
+            type="tel"
+            style={{ display: 'none' }}
+            {...props}
+            ref={(r) => {
+              if (typeof ref === 'function') ref(r);
+              _ref.current = r;
+            }}
+            defaultValue={defaultPhoneNumber.raw}
+          />
+          {children}
+        </span>
+      </PhoneContext.Provider>
     );
   }
 );
 
-PhoneInput.displayName = 'PhoneInput';
+_Phone.displayName = 'Phone';
+
+const Country = forwardRef<
+  HTMLSelectElement,
+  React.ComponentPropsWithRef<'select'>
+>((props, ref) => {
+  const [_value, setValue] = usePhoneContext();
+
+  return (
+    <select
+      ref={ref}
+      {...props}
+      value={_value.country[2]}
+      onChange={(e) => {
+        props.onChange?.(e);
+        const country = getCountryByIso(e.target.value as CountryType[2]);
+
+        const raw = _value.raw
+          ? replaceDialCode(_value.raw, _value.country[3], '+' + country[3])
+          : '+' + country[3];
+
+        setValue({
+          formatted: applyMask(_value.formatted, country[4]),
+          raw,
+          country,
+        });
+      }}
+    >
+      {countries.map((country) => (
+        <option value={country[2]} key={country[2]}>
+          {country[0]}&nbsp;(+{country[3]})
+        </option>
+      ))}
+    </select>
+  );
+});
+
+Country.displayName = _Phone.displayName + '.Country';
+
+const _Number = forwardRef<
+  HTMLInputElement,
+  React.ComponentPropsWithRef<'input'>
+>((props, ref) => {
+  const [_value, setValue] = usePhoneContext();
+
+  return (
+    <input
+      ref={ref}
+      {...props}
+      type="tel"
+      value={_value.formatted}
+      onChange={(e) => {
+        props.onChange?.(e);
+        if (/\d+/.test(e.target.value)) {
+          setValue(
+            Object.assign({}, _value, {
+              raw: '+' + _value.country[3] + removeMask(e.target.value),
+              formatted: applyMask(e.target.value, _value.country[4]),
+            })
+          );
+        }
+      }}
+    />
+  );
+});
+
+_Number.displayName = _Phone.displayName + '.Number';
+
+export const Phone = Object.assign(_Phone, { Country, Number: _Number });

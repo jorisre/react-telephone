@@ -1,6 +1,5 @@
 <h1 align="center">Welcome to react-telephone ☎️</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000&style=for-the-badge" />
+<p align="center">
   <a href="https://bundlephobia.com/result?p=react-telephone">
     <img src="https://img.shields.io/bundlephobia/minzip/react-telephone?style=for-the-badge" />
   </a>
@@ -18,7 +17,7 @@
 ## Coming soon 🧑🏻‍💻
 
 - [ ] Controlled mode
-- [ ] Custom render for `select` and `input`
+- [ ] Custom render for `Phone.Country` and `Phone.Number`
 
 ## Installation
 
@@ -35,16 +34,23 @@ npm i react-telephone
 ## Usage
 
 ```tsx
-import { PhoneInput } from 'react-telephone';
+import { Phone } from 'react-telephone';
 
-export default function Component() {
-  return <PhoneInput />;
+export default function MyComponent() {
+  return (
+    <Phone>
+      <Phone.Country />
+      <Phone.Number />
+    </Phone>
+  );
 }
 ```
 
 ## Props
 
-_Coming soon..._
+| Prop             | Description                                        |                       Default | Value                                                                    |
+| :--------------- | :------------------------------------------------- | ----------------------------: | ------------------------------------------------------------------------ |
+| `defaultCountry` | Default country displayed for the country selector | First country _(Afghanistan)_ | Country [ISO2 code](https://en.wikipedia.org/wiki/ISO_3166-2) _(fr, us)_ |
 
 ## Author
 
