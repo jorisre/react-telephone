@@ -1,10 +1,14 @@
 name: CI
 
-'on':
+on:
   push:
     branches:
       - main
   pull_request:
+    paths-ignore:
+      - '.gitignore'
+      - '.npmignore'
+      - '*.md'
 
 jobs:
   build:
