@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "source": "./src/index.tsx",
-  "main": "./dist/react-telephone.cjs.js",
-  "module": "./dist/react-telephone.module.js",
   "typings": "dist/index.d.ts",
+  "main": "./dist/react-telephone.cjs",
+  "module": "./dist/react-telephone.module.js",
+  "unpkg": "./dist/foo.umd.js",
   "exports": {
-    "import": "./dist/react-telephone.module.js",
-    "require": "./dist/react-telephone.cjs.js"
+    "default": "./dist/react-telephone.modern.js",
+    "require": "./dist/react-telephone.cjs"
   },
   "scripts": {
     "dev": "microbundle watch",
