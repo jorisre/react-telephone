@@ -35,15 +35,14 @@ export const _Phone = forwardRef<HTMLInputElement, PhoneProps>(
   ({ className, style, children, defaultCountry, value, ...props }, ref) => {
     const _ref = useRef<HTMLInputElement | null>(null);
     const _defaultValue = props.defaultValue || value;
-    const defaultPhoneNumber = _defaultValue
-      ? splitPhoneNumber(_defaultValue)
-      : defaultCountry
-      ? {
-          raw: '',
-          formatted: '',
-          country: getCountryByIso(defaultCountry),
-        }
-      : DEFAULT_PHONE_NUMBER;
+    const defaultPhoneNumber =
+      (_defaultValue
+        ? splitPhoneNumber(_defaultValue)
+        : defaultCountry && {
+            raw: '',
+            formatted: '',
+            country: getCountryByIso(defaultCountry),
+          }) || DEFAULT_PHONE_NUMBER;
 
     const [_value, setValue] = useState<PhoneNumber>(defaultPhoneNumber);
 

@@ -10,7 +10,7 @@ export const removeMask = (value: string) => value.replace(/\D/g, '');
 export const applyMask = (value = '', mask?: string) => {
   if (!mask || !value) return value;
   const flatValue = removeMask(value).split('');
-  return mask.replace(/\./g, () => flatValue.shift() || '.').split('.')[0].trim();
+  return /^.*\d/.exec(mask.replace(/\./g, () => flatValue.shift() || ''))?.[0] || '';
 };
 
 export const isE164Compliant = (value: string) =>
@@ -22,9 +22,11 @@ export interface PhoneNumber {
   country: Country;
 }
 
-export const splitPhoneNumber = (value: string): PhoneNumber => {
-  if (!isE164Compliant(value))
-    throw new Error('[react-telephone] phone number should follow E.164');
+export const splitPhoneNumber = (value: string): PhoneNumber | undefined => {
+  if (!isE164Compliant(value)) {
+    console.log('[react-telephone] phone number should follow E.164');
+    return;
+  }
 
   const dial = removeMask(value).substring(0, 6);
 
