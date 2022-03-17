@@ -135,7 +135,8 @@ const _Number = forwardRef<
       value={_value.formatted}
       onChange={(e) => {
         props.onChange?.(e);
-        if (/\d+/.test(e.target.value)) {
+
+        if (/\d+|^$/.test(e.target.value)) {
           setValue(
             Object.assign({}, _value, {
               raw: '+' + _value.country[3] + removeMask(e.target.value),

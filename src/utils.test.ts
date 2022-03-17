@@ -103,7 +103,7 @@ describe('splitPhoneNumber', () => {
 });
 
 test.each([
-  ['+33624157863', '33624157863'],
+  ['+33234567890', '33234567890'],
   ['(33) 33-33-33', '33333333'],
 ])('removeMask(%s) -> %s', (p, e) => expect(removeMask(p)).toBe(e));
 
@@ -125,8 +125,8 @@ test.each([
   ['123456', '.... ....', '1234 56'], // Fill as much as possible
   ['123456', '.... ..-..', '1234 56-'], // Stop at first missing digit
   ['123456', '.... ....-..', '1234 56'], // Stop at first missing digit
-  ['6 24 15 78 63', '. .. .. .. ..', '6 24 15 78 63'],
-  ['+33624157863', undefined, '+33624157863'],
+  ['6 12 34 56 78', '. .. .. .. ..', '6 12 34 56 78'],
+  ['+33234567890', undefined, '+33234567890'],
 ])('applyMask(%s, %s) -> %s', (p, m, e) => {
   expect(applyMask(p, m)).toBe(e);
 });
