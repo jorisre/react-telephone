@@ -7,6 +7,7 @@ import {
 } from './utils';
 
 import countries from './countries';
+import { vi } from 'vitest';
 
 describe('isE164Compliant', () => {
   const fakeNumber = ('' + Date.now()).substring(0, 11);
@@ -100,6 +101,16 @@ describe('splitPhoneNumber', () => {
       },
     ],
   ])('unpackRawPhone(%s)', (p, e) => expect(splitPhoneNumber(p)).toEqual(e));
+
+  test('should return undefined and log an error', () => {
+    const log = vi.spyOn(console, 'log');
+
+    expect(splitPhoneNumber('fake')).toBeUndefined();
+    expect(log).toHaveBeenCalledTimes(1);
+    expect(log.mock.calls[0][0]).toMatchInlineSnapshot(
+      '"[react-telephone] phone number should follow E.164"'
+    );
+  });
 });
 
 test.each([
@@ -123,7 +134,7 @@ test.each([
   ['12 34', '.. ..', '12 34'],
   ['123456', '.. ...', '12 345'], // Ignore excess digits
   ['123456', '.... ....', '1234 56'], // Fill as much as possible
-  ['123456', '.... ..-..', '1234 56-'], // Stop at first missing digit
+  ['123456', '.... ..-..', '1234 56'], // Stop at first missing digit
   ['123456', '.... ....-..', '1234 56'], // Stop at first missing digit
   ['6 12 34 56 78', '. .. .. .. ..', '6 12 34 56 78'],
   ['+33234567890', undefined, '+33234567890'],

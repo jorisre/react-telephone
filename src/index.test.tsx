@@ -218,3 +218,38 @@ test('should empty the field', async () => {
 
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeEmptyDOMElement();
 });
+
+test('should empty the field with phone number that contains `-` or `()`', async () => {
+  const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
+  const placeholder = '(33) 33-33-33';
+
+  render(
+    <Phone onChange={handleChange} defaultCountry="md">
+      <Phone.Country />
+      <Phone.Number placeholder={placeholder} />
+    </Phone>
+  );
+
+  expect(handleChange).not.toHaveBeenCalled();
+
+  user.type(screen.getByPlaceholderText(placeholder), '334455667');
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+
+  expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33) 44-5');
+
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+
+  expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33) 4');
+
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+
+  expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33');
+
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+
+  expect(screen.getByPlaceholderText(placeholder)).toBeEmptyDOMElement();
+});
