@@ -9,20 +9,8 @@ export const removeMask = (value: string) => value.replace(/\D/g, '');
 
 export const applyMask = (value = '', mask?: string) => {
   if (!mask || !value) return value;
-
-  const flatValue = removeMask(value);
-  let formattedValue = '';
-  const splittedMask = mask.split('');
-  for (const m in splittedMask) {
-    const intCount = (formattedValue.match(/\d/g) || []).length;
-
-    if (flatValue[intCount] == null) continue;
-
-    if (splittedMask[m] === '.') formattedValue += flatValue[intCount];
-    else formattedValue += splittedMask[m];
-  }
-
-  return formattedValue;
+  const flatValue = removeMask(value).split('');
+  return mask.replace(/\./g, () => flatValue.shift() || '.').split('.')[0];
 };
 
 export const isE164Compliant = (value: string) =>
