@@ -186,3 +186,35 @@ test('PhoneInput with ref', () => {
     ]
   `);
 });
+
+test('should empty the field', async () => {
+  const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
+
+  render(
+    <Phone onChange={handleChange} defaultCountry="fr">
+      <Phone.Country />
+      <Phone.Number placeholder="3 33 33 33 33" />
+    </Phone>
+  );
+
+  expect(handleChange).not.toHaveBeenCalled();
+
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '334455667');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+
+  expect(screen.getByPlaceholderText('3 33 33 33 33')).toHaveValue('3 34 45 5');
+
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+
+  expect(screen.getByPlaceholderText('3 33 33 33 33')).toHaveValue('3 34 4');
+
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+
+  expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeEmptyDOMElement();
+});
