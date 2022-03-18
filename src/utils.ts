@@ -10,7 +10,7 @@ export const removeMask = (value: string) => value.replace(/\D/g, '');
 export const applyMask = (value = '', mask?: string) => {
   if (!mask || !value) return value;
   const flatValue = removeMask(value).split('');
-  return /^.*\d/.exec(mask.replace(/\./g, () => flatValue.shift() || ''))?.[0] || '';
+  return (/^.*\d/.exec(mask.replace(/\./g, () => flatValue.shift() || '')) || [])[0] || '';
 };
 
 export const isE164Compliant = (value: string) =>
