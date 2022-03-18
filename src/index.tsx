@@ -1,4 +1,4 @@
-import { createContext, forwardRef, useContext, useRef, useState } from 'react';
+import React from 'react';
 import countries from './countries';
 import type { Country as CountryType } from './utils';
 import {
@@ -16,13 +16,17 @@ const DEFAULT_PHONE_NUMBER = {
   country: countries[0],
 };
 
-const PhoneContext = createContext<[PhoneNumber, (pN: PhoneNumber) => void]>([
+const PhoneContext = React.createContext<
+  [PhoneNumber, (pN: PhoneNumber) => void]
+>([
   DEFAULT_PHONE_NUMBER,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   () => {},
 ]);
 
-const usePhoneContext = () => useContext(PhoneContext);
+const usePhoneContext = () => React.useContext(PhoneContext);
+
+const DISPLAY_NAME = 'Phone';
 
 export interface PhoneProps
   extends Omit<React.ComponentPropsWithRef<'input'>, 'value' | 'defaultValue'> {
@@ -31,9 +35,9 @@ export interface PhoneProps
   defaultCountry?: CountryType[2];
 }
 
-export const _Phone = forwardRef<HTMLInputElement, PhoneProps>(
+export const _Phone = React.forwardRef<HTMLInputElement, PhoneProps>(
   ({ className, style, children, defaultCountry, value, ...props }, ref) => {
-    const _ref = useRef<HTMLInputElement | null>(null);
+    const _ref = React.useRef<HTMLInputElement | null>(null);
     const _defaultValue = props.defaultValue || value;
     const defaultPhoneNumber =
       (_defaultValue
@@ -44,7 +48,7 @@ export const _Phone = forwardRef<HTMLInputElement, PhoneProps>(
             country: getCountryByIso(defaultCountry),
           }) || DEFAULT_PHONE_NUMBER;
 
-    const [_value, setValue] = useState<PhoneNumber>(defaultPhoneNumber);
+    const [_value, setValue] = React.useState<PhoneNumber>(defaultPhoneNumber);
 
     const handleChange = (phoneNumber: PhoneNumber) => {
       setValue(phoneNumber);
@@ -81,9 +85,9 @@ export const _Phone = forwardRef<HTMLInputElement, PhoneProps>(
   }
 );
 
-_Phone.displayName = 'Phone';
+_Phone.displayName = DISPLAY_NAME;
 
-const Country = forwardRef<
+const Country = React.forwardRef<
   HTMLSelectElement,
   React.ComponentPropsWithRef<'select'>
 >((props, ref) => {
@@ -95,7 +99,7 @@ const Country = forwardRef<
       {...props}
       value={_value.country[2]}
       onChange={(e) => {
-        props.onChange?.(e);
+        props.onChange && props.onChange(e);
         const country = getCountryByIso(e.target.value as CountryType[2]);
 
         const raw = _value.raw
@@ -118,9 +122,9 @@ const Country = forwardRef<
   );
 });
 
-Country.displayName = _Phone.displayName + '.Country';
+Country.displayName = DISPLAY_NAME + '.Country';
 
-const _Number = forwardRef<
+const _Number = React.forwardRef<
   HTMLInputElement,
   React.ComponentPropsWithRef<'input'>
 >((props, ref) => {
@@ -148,6 +152,6 @@ const _Number = forwardRef<
   );
 });
 
-_Number.displayName = _Phone.displayName + '.Number';
+_Number.displayName = DISPLAY_NAME + '.Number';
 
 export const Phone = Object.assign(_Phone, { Country, Number: _Number });
