@@ -2,6 +2,14 @@ import { Fragment, useState } from 'react';
 import Playground from './Playground';
 import Tailwind from './samples/Tailwind';
 
+function getGithubLink(example: string) {
+  return (
+    'https://github.com/jorisre/react-telephone/blob/main/examples/src/samples/' +
+    example +
+    '.tsx'
+  );
+}
+
 function ComingSoon() {
   return (
     <span className="bg-grey-700 p-4 text-center text-white rounded-md shadow-sm">
@@ -85,7 +93,7 @@ function App() {
       </nav>
 
       {example === 'Tailwind' ? (
-        <Playground>
+        <Playground github={getGithubLink(example)}>
           <Tailwind />
         </Playground>
       ) : null}
