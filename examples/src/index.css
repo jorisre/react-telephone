@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .anaglyph-3xl {
+    @apply text-white tracking-[0.15em] text-3xl;
+    text-shadow: -3px 0 1px theme('colors.blue.300'),
+      3px 0 1px theme('colors.red.300');
+  }
+
+  .anaglyph-4xl {
+    @apply text-white tracking-[0.2em] text-4xl;
+    text-shadow: -4px 0 1px theme('colors.blue.300'),
+      4px 0 1px theme('colors.red.300');
+  }
+
+  .anaglyph-5xl {
+    @apply text-white tracking-[0.15em] text-5xl;
+    text-shadow: -4px 0 1px theme('colors.blue.300'),
+      4px 0 1px theme('colors.red.300');
+  }
+
+  .anaglyph-6xl {
+    @apply text-white tracking-[0.2em] text-6xl;
+    text-shadow: -6px 0 1px theme('colors.blue.300'),
+      6px 0 1px theme('colors.red.300');
+  }
+}

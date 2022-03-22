@@ -22,6 +22,7 @@
 
 - [ ] Controlled mode
 - [ ] Custom render for `Phone.Country` and `Phone.Number`
+- [ ] optional formatted placeholder
 
 ## Installation
 
