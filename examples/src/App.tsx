@@ -25,7 +25,7 @@ type ExampleKey = keyof typeof Example;
 function getDefaultExample() {
   const searchParams = new URLSearchParams(location.search);
 
-  return (searchParams.get(QUERY_NAME) || 'tailwind') as ExampleKey;
+  return (searchParams.get(QUERY_NAME) || 'Tailwind') as ExampleKey;
 }
 
 function useExample() {
