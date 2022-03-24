@@ -10,7 +10,7 @@
 </p>
 <br />
 <p align="center">
-<strong>☎️ react-telephone</strong>
+<div><strong>☎️ react-telephone</strong></div>
 Tiniest react input phone component (auto formating included)
 </p>
 
