@@ -2,15 +2,17 @@ interface AProps extends React.ComponentProps<'a'> {
   icon: React.ReactNode;
 }
 
-const A = ({ children, icon, ...props }: AProps) => (
-  <a
-    className="p-4 hover:bg-grey-700/75 bg-grey-700 inline-flex place-content-center cursor-pointer"
-    {...props}
-  >
-    {icon}
-    {children}
-  </a>
-);
+function A({ children, icon, ...props }: AProps) {
+  return (
+    <a
+      className="p-4 hover:bg-grey-700/75 bg-grey-700 inline-flex place-content-center cursor-pointer"
+      {...props}
+    >
+      {icon}
+      {children}
+    </a>
+  );
+}
 
 interface Props {
   children: React.ReactNode;
@@ -18,23 +20,25 @@ interface Props {
   codesandbox?: string;
 }
 
-export default function Playground({ children, github, codesandbox }: Props) {
+export function Playground({ children, github, codesandbox }: Props) {
   return (
     <main>
       <div
         className="relative py-14 px-3 md:px-10 md:py-16 grid place-content-center rounded-t-md bg-grey-800 overflow-hidden"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(174, 174, 174, .025) .1em, transparent .1em), linear-gradient(90deg, rgba(174, 174, 174, .025) .1em, transparent .1em)',
+            'linear-gradient(rgba(174, 174, 174, .01) .1em, transparent .1em), linear-gradient(90deg, rgba(174, 174, 174, .01) .1em, transparent .1em)',
           backgroundSize: '2em 2em',
         }}
       >
         {children}
       </div>
+
       <div className="text-white grid grid-cols-2 rounded-b-md divide-grey-500/25 divide-x-2 overflow-hidden text-center">
         {github ? (
           <A
             href={github}
+            target="_blank"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +62,9 @@ export default function Playground({ children, github, codesandbox }: Props) {
 
         {codesandbox ? (
           <A
-            href={codesandbox}
-            target="_blank"
+            onClick={() => alert('☎️ Coming soon 😬')}
+            // href={codesandbox}
+            // target="_blank"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
