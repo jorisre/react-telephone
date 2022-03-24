@@ -1,4 +1,4 @@
-<a href="https://react-telephone.joris.re/"><img alt="react-telephone - Demo" src="https://github.com/jorisre/react-telephone/raw/main/examples/assets/header.png"/></a>
+<p align="center"><a href="https://react-telephone.joris.re/"><img alt="react-telephone - Demo" src="https://github.com/jorisre/react-telephone/raw/main/examples/assets/header.png"/></a></p>
 
 <p align="center">
   <a href="https://bundlephobia.com/result?p=react-telephone">
