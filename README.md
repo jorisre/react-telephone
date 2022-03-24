@@ -1,28 +1,37 @@
-<h1 align="center">Welcome to react-telephone ☎️</h1>
+<a href="https://react-telephone.joris.re/"><img alt="react-telephone - Demo" src="https://github.com/jorisre/react-telephone/raw/main/examples/assets/header.png"/></a>
 
 <p align="center">
   <a href="https://bundlephobia.com/result?p=react-telephone">
     <img src="https://img.shields.io/bundlephobia/minzip/react-telephone?style=for-the-badge" />
   </a>
-  <a href="https://twitter.com/_jorisre" target="_blank">
-    <img alt="Twitter: \_jorisre" src="https://img.shields.io/twitter/follow/_jorisre.svg?style=for-the-badge"" />
-  </a>
   <a href="#contributors-">
     <img alt="All Contributors"  src="https://img.shields.io/badge/all_contributors-2-black.svg?style=for-the-badge" />
   </a>
 </p>
+<br />
+<p align="center">
+<strong>☎️ react-telephone</strong>
+Tiniest react input phone component (auto formating included)
+</p>
 
-> ☎️ Tiniest react input phone component (auto formating included) that follow the [E.164 : The international public telecommunication numbering plan](https://www.itu.int/rec/T-REC-E.164-201011-I/en)
+<br />
+<p align="center">
+<a href="https://react-telephone.joris/">Demo</a> 
+<span> · </span>
+  <a href="https://github.com/jorisre/react-telephone#installation">Documentation</a> 
+<span> · </span>
+<a href="https://twitter.com/_jorisre">Twitter</a>
+  <sub>Created by <a href="https://joris.re">Joris</a></sub>
+</p>
 
-### 🏠 [Homepage](react-telephone.joris.re)
+## Features
 
-### ✨ [Demo](react-telephone.joris)
-
-## Coming soon 🧑🏻‍💻
-
-- [ ] Controlled mode
-- [ ] Custom render for `Phone.Country` and `Phone.Number`
-- [ ] optional formatted placeholder
+- 🌐 Follows the **[E.164 : The international public telecommunication numbering plan](https://www.itu.int/rec/T-REC-E.164-201011-I/en)**
+- 🎨 **Easily Customizable**
+- 🪶 **Lightweight** - _less than 6kb_
+- [ ] Controlled mode: coming soon
+- [ ] Custom render for `Phone.Country` and `Phone.Number`: coming soon
+- [ ] Optional formatted placeholder: coming soon
 
 ## Installation
 
@@ -54,10 +63,10 @@ export default function MyComponent() {
 ## Props
 
 | Prop             | Description                                        | Default                       |                                                                    Value |
-| :--------------- | -------------------------------------------------- | ----------------------------- | -----------------------------------------------------------------------: |
+| :--------------- | :------------------------------------------------- | :---------------------------- | -----------------------------------------------------------------------: |
 | `defaultCountry` | Default country displayed for the country selector | First country _(Afghanistan)_ | Country [ISO2 code](https://en.wikipedia.org/wiki/ISO_3166-2) _(fr, us)_ |
 
-## ✨ Contributors
+## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -75,29 +84,3 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-## Author
-
-👤 **Joris**
-
-- Twitter: [@\_jorisre](https://twitter.com/_jorisre)
-- Github: [@jorisre](https://github.com/jorisre)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/jorisre/react-telephone/issues). You can also take a look at the [contributing guide](https://github.com/jorisre/react-telephone/blob/master/CONTRIBUTING.md) and [code of conduct](https://github.com/jorisre/react-telephone/blob/master/CODE_OF_CONDUCT.md).
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## 📝 License
-
-Copyright © 2022 [Joris](https://github.com/jorisre).<br />
-This project is [MIT](https://github.com/jorisre/react-telephone/blob/master/LICENSE) licensed.
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

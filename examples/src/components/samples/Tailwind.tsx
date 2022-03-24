@@ -1,6 +1,6 @@
 import { Phone } from 'react-telephone';
 
-export default function Tailwind() {
+export function TailwindSample() {
   return (
     <Phone className="relative rounded text-white shadow-sm bg-grey-800 -space-y-px">
       <Phone.Country className="block bg-transparent p-2 outline-none focus:ring-1 focus:ring-blue-300 focus:border-blue-300 rounded-none rounded-t border border-grey-500/50 text-base" />
