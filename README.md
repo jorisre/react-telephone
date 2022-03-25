@@ -1,4 +1,4 @@
-<p align="center"><a href="https://react-telephone.joris.re/"><img alt="react-telephone - Demo" src="https://github.com/jorisre/react-telephone/raw/main/examples/assets/header.png"/></a></p>
+<p align="center"><a href="https://react-telephone.joris.re/"><img alt="react-telephone - Demo" src="https://github.com/jorisre/react-telephone/raw/main/examples/public/header.png"/></a></p>
 
 <p align="center">
   <a href="https://bundlephobia.com/result?p=react-telephone">
@@ -29,6 +29,8 @@ Tiniest react input phone component (auto formating included)
 - 🌐 Follows the **[E.164 : The international public telecommunication numbering plan](https://www.itu.int/rec/T-REC-E.164-201011-I/en)**
 - 🎨 **Easily Customizable**
 - 🪶 **Lightweight** - _less than 6kb_
+- 📞 **Native** - _it's just a HMTL input_
+- 🔌 **easily integration** - _it works without additional configuration (remix, react-hook-form)_
 - [ ] Controlled mode: coming soon
 - [ ] Custom render for `Phone.Country` and `Phone.Number`: coming soon
 - [ ] Optional formatted placeholder: coming soon
