@@ -1,6 +1,7 @@
 import { getParameters } from 'codesandbox/lib/api/define';
 
 export enum Sample {
+  Basic = 'Basic',
   Tailwind = 'Tailwind CSS',
   StyledComponents = 'styled-components',
   CssModules = 'CSS Modules',

@@ -16,7 +16,7 @@ Tiniest react input phone component (auto formating included)
 
 <br />
 <p align="center">
-<a href="https://react-telephone.joris/">Demo</a> 
+<a href="https://react-telephone.joris.re">Demo</a> 
 <span> · </span>
   <a href="https://github.com/jorisre/react-telephone#installation">Documentation</a> 
 <span> · </span>

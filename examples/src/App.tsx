@@ -34,6 +34,10 @@ function App() {
       <h1 className="text-center font-bold anaglyph-3xl md:anaglyph-6xl">
         react-telephone
       </h1>
+      <h2 className="text-center text-white text-xl mt-5 font-medium">
+        Tiniest react input phone component{' '}
+        <i className="font-normal text-base">(auto formating included)</i>
+      </h2>
 
       <nav className="pt-10 pb-5 md:py-20">
         <select
