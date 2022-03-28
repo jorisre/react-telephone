@@ -31,6 +31,6 @@ const parameters = getParameters({
 export function getSampleLinks(name: SampleKey) {
   return {
     codesandbox: `https://codesandbox.io/api/v1/sandboxes/define?parameters=${parameters}`,
-    github: `https://github.com/jorisre/react-telephone/blob/main/examples/src/samples/${name}.tsx`,
+    github: `https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/${name}.tsx`,
   };
 }
