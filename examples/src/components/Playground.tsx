@@ -62,9 +62,8 @@ export function Playground({ children, github, codesandbox }: Props) {
 
         {codesandbox ? (
           <A
-            onClick={() => alert('☎️ Coming soon 😬')}
-            // href={codesandbox}
-            // target="_blank"
+            href={codesandbox}
+            target="_blank"
             icon={
               <svg
                 xmlns="http://www.w3.org/2000/svg"
