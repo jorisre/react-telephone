@@ -29,7 +29,7 @@ const parameters = getParameters({
 });
 
 export function getSampleLinks(name: SampleKey) {
-  const github = `https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/${name}.tsx`;
+  const github = `https://github.com/jorisre/react-telephone/tree/main/examples/src/components/samples/${name}.tsx`;
 
   return {
     codesandbox: github.replace('github.com', 'githubbox.com'),
