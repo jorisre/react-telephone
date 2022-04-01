@@ -35,6 +35,15 @@ Tiniest react input phone component (auto formating included)
 - [ ] Custom render for `Phone.Country` and `Phone.Number`: coming soon
 - [ ] Optional formatted placeholder: coming soon
 
+### Examples (<a href="https://react-telephone.joris.re">Demo</a>)
+
+- [Basic](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/Basic.tsx)
+- [Tailwind Css](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/Tailwind.tsx)
+- [Styled Components](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/StyledComponents.tsx)
+- [Css Modules](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/CssModules.tsx)
+- [Inline Styles](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/InlineStyles.tsx)
+- [React Hook Form](https://github.com/jorisre/react-telephone/blob/main/examples/src/components/samples/ReactHookForm.tsx)
+
 ## Installation
 
 ```sh
