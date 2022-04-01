@@ -17,10 +17,8 @@ export function getSampleLinks(name: SampleKey) {
   return {
     stackblitz:
       GITHUB_REPO_EXAMPLES.replace('github.com', 'stackblitz.com/github') +
-      '/' +
-      githubSamplePath +
       '?file=' +
       githubSamplePath,
-    github: GITHUB_REPO_EXAMPLES + githubSamplePath,
+    github: GITHUB_REPO_EXAMPLES + '/' + githubSamplePath,
   };
 }
