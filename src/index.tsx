@@ -134,6 +134,11 @@ const _Number = React.forwardRef<
     <input
       ref={ref}
       {...props}
+      placeholder={
+        /\d+/.test(props.placeholder || '')
+          ? applyMask(props.placeholder, _value.country[4])
+          : props.placeholder
+      }
       type="tel"
       value={_value.formatted}
       onChange={(e) => {
