@@ -1,7 +1,7 @@
 import { SampleKey } from '../../utils';
 import { ComingSoon } from '../ComingSoon';
 import { BasicSample } from './Basic';
-
+import { StyledComponentsSample } from './StyledComponents';
 import { TailwindSample } from './Tailwind';
 
 export const Samples: Record<SampleKey, () => JSX.Element> = {
@@ -10,5 +10,5 @@ export const Samples: Record<SampleKey, () => JSX.Element> = {
   CssModules: ComingSoon,
   Custom: ComingSoon,
   InlineStyles: ComingSoon,
-  StyledComponents: ComingSoon,
+  StyledComponents: StyledComponentsSample,
 };
