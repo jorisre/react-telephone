@@ -4,7 +4,7 @@ export enum Sample {
   StyledComponents = 'styled-components',
   CssModules = 'CSS Modules',
   InlineStyles = 'Inline Styles',
-  Custom = 'Custom',
+  ReactHookForm = 'React Hook Form',
 }
 
 export type SampleKey = keyof typeof Sample;
