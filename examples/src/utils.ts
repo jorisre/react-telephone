@@ -1,5 +1,3 @@
-import { getParameters } from 'codesandbox/lib/api/define';
-
 export enum Sample {
   Basic = 'Basic',
   Tailwind = 'Tailwind CSS',
@@ -11,28 +9,15 @@ export enum Sample {
 
 export type SampleKey = keyof typeof Sample;
 
-const parameters = getParameters({
-  template: 'create-react-app-typescript',
-  files: {
-    'package.json': {
-      // eslint-disable-next-line
-      // @ts-expect-error
-      content: {
-        dependencies: {
-          'react-telephone': 'latest',
-          react: 'latest',
-          'react-dom': 'latest',
-        },
-      },
-    },
-  },
-});
-
 export function getSampleLinks(name: SampleKey) {
-  const github = `https://github.com/jorisre/react-telephone/tree/main/examples/src/components/samples/${name}.tsx`;
+  const GITHUB_REPO_EXAMPLES = `https://github.com/jorisre/react-telephone/tree/main/examples`;
+  const githubSamplePath = `src/components/samples/${name}.tsx`;
 
   return {
-    codesandbox: github.replace('github.com', 'githubbox.com'),
-    github,
+    stackblitz:
+      GITHUB_REPO_EXAMPLES.replace('github.com', 'stackblitz.com/github') +
+      '?file=' +
+      githubSamplePath,
+    github: GITHUB_REPO_EXAMPLES + githubSamplePath,
   };
 }
