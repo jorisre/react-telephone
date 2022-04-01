@@ -253,3 +253,37 @@ test('should empty the field with phone number that contains `-` or `()`', async
 
   expect(screen.getByPlaceholderText(placeholder)).toBeEmptyDOMElement();
 });
+
+test('should format placeholder if it\'s formatable', async () => {
+  const placeholder = '333333333';
+
+  render(
+    <Phone defaultCountry="md">
+      <Phone.Country />
+      <Phone.Number placeholder={placeholder} />
+    </Phone>
+  );
+
+  expect(screen.getByPlaceholderText('(33) 33-33-33')).toBeTruthy();
+
+  await user.selectOptions(screen.getByDisplayValue('Moldova (+373)'), 'fr');
+
+  expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeTruthy();
+});
+
+test('should not format placeholder', async () => {
+  const placeholder = 'XXXXXXXXX';
+
+  render(
+    <Phone defaultCountry="md">
+      <Phone.Country />
+      <Phone.Number placeholder={placeholder} />
+    </Phone>
+  );
+
+  expect(screen.getByPlaceholderText(placeholder)).toBeTruthy();
+
+  await user.selectOptions(screen.getByDisplayValue('Moldova (+373)'), 'fr');
+
+  expect(screen.getByPlaceholderText(placeholder)).toBeTruthy();
+});

@@ -33,7 +33,6 @@ Tiniest react input phone component (auto formating included)
 - 🔌 **easily integration** - _it works without additional configuration (remix, react-hook-form)_
 - [ ] Controlled mode: coming soon
 - [ ] Custom render for `Phone.Country` and `Phone.Number`: coming soon
-- [ ] Optional formatted placeholder: coming soon
 
 ### Examples (<a href="https://react-telephone.joris.re">Demo</a>)
 

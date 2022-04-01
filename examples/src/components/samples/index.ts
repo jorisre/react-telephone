@@ -1,5 +1,4 @@
 import { SampleKey } from '../../utils';
-import { ComingSoon } from '../ComingSoon';
 import { BasicSample } from './Basic';
 import { CssModulesSample } from './CssModules';
 import { InlineStylesSample } from './InlineStyles';
