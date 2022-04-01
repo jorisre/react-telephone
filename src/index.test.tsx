@@ -42,7 +42,7 @@ test('render PhoneInput with value', () => {
   expect(screen.queryByDisplayValue('Moldova (+373)')).toBeVisible();
 });
 
-test('handle PhoneInput number value change', () => {
+test('handle PhoneInput number value change', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
 
   render(
@@ -54,7 +54,7 @@ test('handle PhoneInput number value change', () => {
 
   expect(handleChange).not.toHaveBeenCalled();
 
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '334455667');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '334455667');
 
   expect(handleChange).toHaveBeenCalled();
   expect(handleChange).toHaveBeenCalledWith(
@@ -64,7 +64,7 @@ test('handle PhoneInput number value change', () => {
   );
 });
 
-test('handle PhoneInput country value change', () => {
+test('handle PhoneInput country value change', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
 
   render(
@@ -76,7 +76,7 @@ test('handle PhoneInput country value change', () => {
 
   expect(handleChange).not.toHaveBeenCalled();
 
-  user.selectOptions(screen.getByDisplayValue('Afghanistan (+93)'), 'fr');
+  await user.selectOptions(screen.getByDisplayValue('Afghanistan (+93)'), 'fr');
 
   expect(handleChange).toHaveBeenCalled();
   expect(handleChange).toHaveBeenCalledWith(
@@ -86,7 +86,7 @@ test('handle PhoneInput country value change', () => {
   );
 });
 
-test('handle PhoneInput country and value change', () => {
+test('handle PhoneInput country and value change', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
 
   render(
@@ -98,7 +98,7 @@ test('handle PhoneInput country and value change', () => {
 
   expect(handleChange).not.toHaveBeenCalled();
 
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '634455667');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '634455667');
 
   expect(handleChange).toHaveBeenCalled();
   expect(handleChange).toHaveBeenCalledWith(
@@ -107,7 +107,7 @@ test('handle PhoneInput country and value change', () => {
     })
   );
 
-  user.selectOptions(screen.getByDisplayValue('Afghanistan (+93)'), 'fr');
+  await user.selectOptions(screen.getByDisplayValue('Afghanistan (+93)'), 'fr');
 
   expect(handleChange).toHaveBeenCalled();
   expect(handleChange).toHaveBeenCalledWith(
@@ -117,7 +117,7 @@ test('handle PhoneInput country and value change', () => {
   );
 });
 
-test('handle PhoneInput number change with defaultValue', () => {
+test('handle PhoneInput number change with defaultValue', async () => {
   const phone = '+37322445566';
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
   render(
@@ -133,7 +133,7 @@ test('handle PhoneInput number change with defaultValue', () => {
   expect(screen.queryByDisplayValue('(22) 44-55-66')).toBeVisible();
   expect(screen.queryByDisplayValue('Moldova (+373)')).toBeVisible();
 
-  user.selectOptions(screen.getByDisplayValue('Moldova (+373)'), 'fr');
+  await user.selectOptions(screen.getByDisplayValue('Moldova (+373)'), 'fr');
 
   expect(handleChange).toHaveBeenCalled();
   expect(handleChange).toHaveBeenCalledWith(
@@ -146,7 +146,7 @@ test('handle PhoneInput number change with defaultValue', () => {
   expect(screen.queryByDisplayValue('France (+33)')).toBeVisible();
 });
 
-test('PhoneInput with default country and change it', () => {
+test('PhoneInput with default country and change it', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
 
   render(
@@ -158,7 +158,7 @@ test('PhoneInput with default country and change it', () => {
 
   expect(screen.queryByDisplayValue('France (+33)')).toBeVisible();
 
-  user.selectOptions(screen.getByDisplayValue('France (+33)'), 'fi');
+  await user.selectOptions(screen.getByDisplayValue('France (+33)'), 'fi');
 
   expect(screen.queryByDisplayValue('Finland (+358)')).toBeVisible();
 });
@@ -199,22 +199,22 @@ test('should empty the field', async () => {
 
   expect(handleChange).not.toHaveBeenCalled();
 
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '334455667');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '334455667');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
 
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toHaveValue('3 34 45 5');
 
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
 
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toHaveValue('3 34 4');
 
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
-  user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
+  await user.type(screen.getByPlaceholderText('3 33 33 33 33'), '{Backspace}');
 
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeEmptyDOMElement();
 });
@@ -232,24 +232,24 @@ test('should empty the field with phone number that contains `-` or `()`', async
 
   expect(handleChange).not.toHaveBeenCalled();
 
-  user.type(screen.getByPlaceholderText(placeholder), '334455667');
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '334455667');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
 
   expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33) 44-5');
 
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
 
   expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33) 4');
 
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
 
   expect(screen.getByPlaceholderText(placeholder)).toHaveValue('(33');
 
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
-  user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
+  await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
 
   expect(screen.getByPlaceholderText(placeholder)).toBeEmptyDOMElement();
 });
