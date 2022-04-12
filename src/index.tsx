@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import countries from './countries';
 import type { Country as CountryType } from './utils';
 import {
