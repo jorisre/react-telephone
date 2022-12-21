@@ -1022,10 +1022,10 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-telephone@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/react-telephone/-/react-telephone-1.3.1.tgz#530e600e2e620d96f312189e951b1695063fa38c"
-  integrity sha512-NcR2YEysFkdNKlURPcFQGz8gW9CBSI5ooAlInu/NYHoTFAmR6R3lnvVc8K+MXKr3UKOXMrEOssObp4p8KaZEfA==
+react-telephone@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/react-telephone/-/react-telephone-1.3.2.tgz#dadc9b216ef4df91faaa3c4b02c800f6e6b64688"
+  integrity sha512-w18erEdthrLlZm1lgpQTXMg8ctSs0TYBJmx/ieiXhOStGvZEF1wy/vukNxDOlfiYjdpgE4DrKZ0GA9qGh5mNvQ==
 
 react@^18.2.0:
   version "18.2.0"
