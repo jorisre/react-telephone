@@ -1,11 +1,10 @@
 import * as React from 'react';
 import countries from './countries';
-import type { Country as CountryType } from './utils';
+import { Country as CountryType, getMaskDigit } from './utils';
 import {
   applyMask,
   getCountryByIso,
   PhoneNumber,
-  removeMask,
   replaceDialCode,
   splitPhoneNumber,
 } from './utils';
@@ -144,14 +143,15 @@ const _Number = React.forwardRef<
       onChange={(e) => {
         props.onChange?.(e);
 
-        if (/\d+|^$/.test(e.target.value)) {
-          setValue(
-            Object.assign({}, _value, {
-              raw: '+' + _value.country[3] + removeMask(e.target.value),
-              formatted: applyMask(e.target.value, _value.country[4]),
-            })
-          );
-        }
+        setValue(
+          Object.assign({}, _value, {
+            raw:
+              '+' +
+              _value.country[3] +
+              getMaskDigit(e.target.value, _value.country[4]),
+            formatted: applyMask(e.target.value, _value.country[4]),
+          })
+        );
       }}
     />
   );
