@@ -1,6 +1,7 @@
 import {
   applyMask,
   getCountryByIso,
+  getMaskDigit,
   isE164Compliant,
   removeMask,
   splitPhoneNumber,
@@ -117,6 +118,15 @@ test.each([
   ['+33234567890', '33234567890'],
   ['(33) 33-33-33', '33333333'],
 ])('removeMask(%s) -> %s', (p, e) => expect(removeMask(p)).toBe(e));
+
+test.each([
+  ['234567890', '. .. .. .. ..', '234567890'],
+  ['23456789099', '. .. .. .. ..', '234567890'],
+  ['2345678', '. .. .. .. ..', '2345678'],
+  ['(33) 33-33-33', '(..) ..-..-..', '33333333'],
+])('getMaskDigit(%s, %s) -> %s', (p, m, e) =>
+  expect(getMaskDigit(p, m)).toBe(e)
+);
 
 test('getCountryByIso', () => {
   expect(getCountryByIso('fr')).toEqual([

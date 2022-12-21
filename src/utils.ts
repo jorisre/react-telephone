@@ -6,11 +6,22 @@ export const getCountryByIso = (code: Country[2]) =>
   countries.find((c) => c[2] === code) as Country;
 
 export const removeMask = (value: string) => value.replace(/\D/g, '');
+export const getMaskDigit = (value: string, mask?: string) => {
+  const v = removeMask(value);
+  if (!mask) return v;
+
+  const numberOfDigits = mask.match(/\./g)?.length;
+
+  return v.substring(0, numberOfDigits);
+};
 
 export const applyMask = (value = '', mask?: string) => {
   if (!mask || !value) return value;
   const flatValue = removeMask(value).split('');
-  return (/^.*\d/.exec(mask.replace(/\./g, () => flatValue.shift() || '')) || [])[0] || '';
+  return (
+    (/^.*\d/.exec(mask.replace(/\./g, () => flatValue.shift() || '')) ||
+      [])[0] || ''
+  );
 };
 
 export const isE164Compliant = (value: string) =>

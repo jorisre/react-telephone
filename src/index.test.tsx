@@ -219,7 +219,7 @@ test('should empty the field', async () => {
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeEmptyDOMElement();
 });
 
-test('should empty the field with phone number that contains `-` or `()`', async () => {
+test.only('should empty the field with phone number that contains `-` or `()`', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
   const placeholder = '(33) 33-33-33';
 
@@ -251,10 +251,13 @@ test('should empty the field with phone number that contains `-` or `()`', async
   await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
   await user.type(screen.getByPlaceholderText(placeholder), '{Backspace}');
 
-  expect(screen.getByPlaceholderText(placeholder)).toBeEmptyDOMElement();
+  expect(screen.getByPlaceholderText(placeholder)).toHaveValue('');
+
+  await user.type(screen.getByPlaceholderText(placeholder), 'AA');
+  expect(screen.getByPlaceholderText(placeholder)).toHaveValue('');
 });
 
-test('should format placeholder if it\'s formatable', async () => {
+test("should format placeholder if it's formatable", async () => {
   const placeholder = '333333333';
 
   render(
@@ -286,4 +289,24 @@ test('should not format placeholder', async () => {
   await user.selectOptions(screen.getByDisplayValue('Moldova (+373)'), 'fr');
 
   expect(screen.getByPlaceholderText(placeholder)).toBeTruthy();
+});
+
+test('PhoneInput with default country', async () => {
+  const placeholder = 'XXXXXXXXX';
+  const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
+
+  render(
+    <Phone onChange={handleChange} defaultCountry="fr">
+      <Phone.Country />
+      <Phone.Number placeholder={placeholder} />
+    </Phone>
+  );
+
+  expect(screen.queryByDisplayValue('France (+33)')).toBeVisible();
+
+  await user.type(screen.getByPlaceholderText(placeholder), '7878787877');
+
+  expect(handleChange).toHaveBeenCalled();
+
+  expect(handleChange.mock.calls[0][0].target.value).toEqual('+33787878787');
 });
