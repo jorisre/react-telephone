@@ -68,7 +68,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.11",
     "husky": ">=8.0.2",
-    "jsdom": "^20.0.3",
+    "jsdom": "^21.0.0",
     "lint-staged": ">=13.1.0",
     "microbundle": "^0.15.1",
     "prettier": "2.8.1",
