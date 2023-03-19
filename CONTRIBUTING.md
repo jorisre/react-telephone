@@ -12,8 +12,8 @@ Follow this [guide](https://guides.github.com/activities/forking/) for more expl
 
 Once you have fork and clone this project you can follow these steps
 
-- Install dependencies by running `yarn install`
-- Execute`cd example && yarn start` to start the example
-- Once you've added code, run `yarn test` to ensure the test suite still passes
-- Finally run `yarn lint` to check linter's errors
+- Install dependencies by running `npm install`
+- Execute`cd example && npm start` to start the example
+- Once you've added code, run `npm test` to ensure the test suite still passes
+- Finally run `npm run lint` to check linter's errors
 - You can push and submit your pull request 🎉

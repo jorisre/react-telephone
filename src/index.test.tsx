@@ -1,3 +1,4 @@
+import React from 'react';
 import { vi } from 'vitest';
 import { screen, render } from '@testing-library/react';
 import user from '@testing-library/user-event';
@@ -219,7 +220,7 @@ test('should empty the field', async () => {
   expect(screen.getByPlaceholderText('3 33 33 33 33')).toBeEmptyDOMElement();
 });
 
-test.only('should empty the field with phone number that contains `-` or `()`', async () => {
+test('should empty the field with phone number that contains `-` or `()`', async () => {
   const handleChange = vi.fn<[React.ChangeEvent<HTMLInputElement>], void>();
   const placeholder = '(33) 33-33-33';
 
