@@ -43,7 +43,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=v10.24.1"
+    "node": ">=v18.15.0"
   },
   "author": {
     "name": "Joris",
