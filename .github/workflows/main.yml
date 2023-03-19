@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
 
@@ -27,13 +27,13 @@ jobs:
         uses: bahmutov/npm-install@v1
 
       - name: Lint
-        run: yarn lint
+        run: npm run lint
 
       - name: Test
-        run: yarn test
+        run: npm run test
 
       - name: Build
-        run: yarn tsc --noEmit
+        run: npm run tsc
 
   publish-module:
     name: 'Publish Module to NPM on Node ${{ matrix.node }} and ${{ matrix.os }}'
@@ -42,16 +42,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: 'Use Node ${{ matrix.node }}'
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '${{ matrix.node }}'
           registry-url: 'https://registry.npmjs.org/'
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
       - name: Build
-        run: yarn build
+        run: npm run build
       - name: Publish
         run: npx semantic-release
         env:
