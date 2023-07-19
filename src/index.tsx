@@ -20,7 +20,7 @@ const PhoneContext = React.createContext<
 >([
   DEFAULT_PHONE_NUMBER,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  () => {},
+  () => { },
 ]);
 
 const usePhoneContext = () => React.useContext(PhoneContext);
@@ -42,10 +42,10 @@ export const _Phone = React.forwardRef<HTMLInputElement, PhoneProps>(
       (_defaultValue
         ? splitPhoneNumber(_defaultValue)
         : defaultCountry && {
-            raw: '',
-            formatted: '',
-            country: getCountryByIso(defaultCountry),
-          }) || DEFAULT_PHONE_NUMBER;
+          raw: '',
+          formatted: '',
+          country: getCountryByIso(defaultCountry),
+        }) || DEFAULT_PHONE_NUMBER;
 
     const [_value, setValue] = React.useState<PhoneNumber>(defaultPhoneNumber);
 
@@ -160,3 +160,10 @@ const _Number = React.forwardRef<
 _Number.displayName = DISPLAY_NAME + '.Number';
 
 export const Phone = Object.assign(_Phone, { Country, Number: _Number });
+export {
+  countries,
+  applyMask,
+  getCountryByIso,
+  replaceDialCode,
+  splitPhoneNumber,
+};
