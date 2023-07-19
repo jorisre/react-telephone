@@ -45,13 +45,13 @@ export const splitPhoneNumber = (value: string): PhoneNumber | undefined => {
   const [country] = countries.filter(
     (c) =>
       dial.startsWith(c[3]) &&
-      (c[6] ? c[6].some((a) => dial.startsWith(`${c[3]}${a}`)) : true)
+      (c[6] ? c[6].some((a:string) => dial.startsWith(`${c[3]}${a}`)) : true)
   );
 
   return {
     raw: value,
     country: country,
-    formatted: applyMask(replaceDialCode(value, country[3], ''), country[4]),
+    formatted: country ? applyMask(replaceDialCode(value, country[3], ''), country[4]) : value,
   };
 };
 
