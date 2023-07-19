@@ -76,6 +76,16 @@ export default function MyComponent() {
 | :--------------- | :------------------------------------------------- | :---------------------------- | -----------------------------------------------------------------------: |
 | `defaultCountry` | Default country displayed for the country selector | First country _(Afghanistan)_ | Country [ISO2 code](https://en.wikipedia.org/wiki/ISO_3166-2) _(fr, us)_ |
 
+## Utils
+
+| Name               | Description                                        |
+| :----------------- | :------------------------------------------------- |
+| `countries`        | List of all countries.                             |
+| `getCountryByIso`  | Returns the country object for a given ISO code.   |
+| `applyMask`        | Apply the mask to a given phone number.            |
+| `splitPhoneNumber` | Split a phone number into country code and number. |
+| `replaceDialCode`  | Replace the dial code of a phone number.           |
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
