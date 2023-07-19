@@ -94,10 +94,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="http://joris.re"><img src="https://avatars.githubusercontent.com/u/7545547?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Joris</b></sub></a><br /><a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Code">💻</a> <a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Documentation">📖</a> <a href="#ideas-jorisre" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/jorisre/react-telephone/pulls?q=is%3Apr+reviewed-by%3Ajorisre" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/Kcazer"><img src="https://avatars.githubusercontent.com/u/609420?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michaël Rézac</b></sub></a><br /><a href="#ideas-Kcazer" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/jorisre/react-telephone/commits?author=Kcazer" title="Code">💻</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://joris.re"><img src="https://avatars.githubusercontent.com/u/7545547?v=4?s=100" width="100px;" alt="Joris"/><br /><sub><b>Joris</b></sub></a><br /><a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Code">💻</a> <a href="https://github.com/jorisre/react-telephone/commits?author=jorisre" title="Documentation">📖</a> <a href="#ideas-jorisre" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/jorisre/react-telephone/pulls?q=is%3Apr+reviewed-by%3Ajorisre" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Kcazer"><img src="https://avatars.githubusercontent.com/u/609420?v=4?s=100" width="100px;" alt="Michaël Rézac"/><br /><sub><b>Michaël Rézac</b></sub></a><br /><a href="#ideas-Kcazer" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/jorisre/react-telephone/commits?author=Kcazer" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://varevarao.dev"><img src="https://avatars.githubusercontent.com/u/3070869?v=4?s=100" width="100px;" alt="Varshneya Rao"/><br /><sub><b>Varshneya Rao</b></sub></a><br /><a href="https://github.com/jorisre/react-telephone/commits?author=varevarao" title="Code">💻</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->

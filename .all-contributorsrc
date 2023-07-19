@@ -26,6 +26,15 @@
         "ideas",
         "code"
       ]
+    },
+    {
+      "login": "varevarao",
+      "name": "Varshneya Rao",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3070869?v=4",
+      "profile": "http://varevarao.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -33,5 +42,7 @@
   "projectOwner": "jorisre",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs",
+  "commitConvention": "angular"
 }
