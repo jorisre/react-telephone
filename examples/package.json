@@ -10,15 +10,15 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.45.4",
+    "react-hook-form": "^7.46.1",
     "react-telephone": "^1.4.1",
     "styled-components": "^6.0.7"
   },
   "devDependencies": {
-    "@types/node": "^20.5.7",
+    "@types/node": "^20.6.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@types/styled-components": "^5.1.26",
+    "@types/styled-components": "^5.1.27",
     "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
