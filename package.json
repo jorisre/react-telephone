@@ -4,13 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "source": "./src/index.tsx",
-  "typings": "dist/index.d.ts",
   "main": "./dist/react-telephone.cjs",
   "module": "./dist/react-telephone.module.js",
-  "unpkg": "./dist/foo.umd.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    "require": "./dist/react-telephone.cjs",
-    "default": "./dist/react-telephone.modern.js"
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "browser": "./dist/react-telephone.module.js",
+      "umd": "./dist/react-telephone.umd.js",
+      "import": "./dist/react-telephone.mjs",
+      "require": "./dist/react-telephone.js"
+    }
   },
   "scripts": {
     "dev": "microbundle watch",
