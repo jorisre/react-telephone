@@ -14,7 +14,7 @@
       "browser": "./dist/react-telephone.module.js",
       "umd": "./dist/react-telephone.umd.js",
       "import": "./dist/react-telephone.mjs",
-      "require": "./dist/react-telephone.js"
+      "require": "./dist/react-telephone.cjs"
     }
   },
   "scripts": {
