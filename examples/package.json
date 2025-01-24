@@ -8,22 +8,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "react-hook-form": "^7.47.0",
     "react-telephone": "^1.4.3",
     "styled-components": "^6.0.8"
   },
   "devDependencies": {
-    "@types/node": "^20.8.0",
-    "@types/react": "^18.2.24",
-    "@types/react-dom": "^18.2.8",
+    "@types/node": "^22.10.10",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
     "@types/styled-components": "^5.1.28",
     "@vitejs/plugin-react": "^4.1.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.3",
+    "tailwindcss": "^4.0.0",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^6.0.11"
   }
 }
